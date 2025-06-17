@@ -1,0 +1,100 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #dfe9f3, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357ab8;
+  transform: scale(1.05);
+}
+
+#result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease-in-out;
+}
+
+#result.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hidden {
+  display: none;
+}
+
+#historyContainer {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+#historyList li {
+  margin: 5px 0;
+  padding: 6px 10px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+.reset-btn {
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
