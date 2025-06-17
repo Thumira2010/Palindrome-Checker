@@ -27,7 +27,7 @@ A stylish and responsive web app to check if a given text is a palindrome. Built
 
 ## 🌐 Live Demo
 
-[🔗 View Live Site](https://your-live-link-here.com](https://thumira2010.github.io/Palindrome-Checker/)
+[🔗 View Live Site](https://thumira2010.github.io/Palindrome-Checker/)
 
 ---
 
