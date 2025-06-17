@@ -23,6 +23,8 @@ function showResult(isPalin) {
   result.textContent = isPalin ? "✅ Palindrome" : "❌ Not a Palindrome";
   result.classList.remove("hidden");
   result.classList.add("show");
+  inputText.classList.remove("correct", "incorrect");
+  inputText.classList.add(isPalin ? "correct" : "incorrect");
 }
 
 function updateHistory(input, isPalin) {
@@ -36,11 +38,21 @@ function updateHistory(input, isPalin) {
 function renderHistory() {
   const history = JSON.parse(localStorage.getItem("palindromeHistory")) || [];
   historyList.innerHTML = "";
-  history.forEach(entry => {
+
+  history.forEach((entry, index) => {
     const li = document.createElement("li");
     li.textContent = `${entry.input} → ${entry.result ? '✅' : '❌'}`;
+    
+    // Apply animation to only the first two items (which are newly reordered)
+    if (index > 1) {
+      li.classList.add("animate-in");
+    }
+
     historyList.appendChild(li);
   });
+
+  // Auto scroll to top of the history list when updated
+  historyList.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function handleCheck() {
@@ -56,6 +68,12 @@ resetHistoryBtn.addEventListener("click", () => {
   renderHistory();
 });
 
+function debounceCheck(){
+    if (!inputText.value.trim()) {
+        result.classList.add("hidden");
+        inputText.classList.remove("correct", "incorrect");
+    }
+}
 checkBtn.addEventListener("click", handleCheck);
 inputText.addEventListener("input", debounceCheck);
 
